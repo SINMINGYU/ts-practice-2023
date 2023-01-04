@@ -1,14 +1,29 @@
 "use strict";
-let count = 0;
-count += 1;
-count = "갑자기 분위기 문자열";
-const message = "hello world";
-const done = true;
-const numbers = [1, 2, 3];
-const messages = ["hello", "world"];
-messages.push(1);
-let mightBeUndefined = undefined;
-let nullableNumber = null;
-let color = "red";
-color = "yellow";
-color = "green";
+class Circle {
+    constructor(radius) {
+        this.radius = radius;
+        this.radius = radius;
+    }
+    getArea() {
+        return this.radius * this.radius * Math.PI;
+    }
+}
+class Rectangle {
+    constructor(width, height) {
+        this.width = width;
+        this.height = height;
+        this.width = width;
+        this.height = height;
+    }
+    getArea() {
+        return this.width * this.height;
+    }
+}
+const circle = new Circle(5);
+const rectangle = new Rectangle(10, 5);
+console.log(circle.radius);
+// console.log(rectangle.width);
+const shapes = [new Circle(5), new Rectangle(10, 5)];
+shapes.forEach((shape) => {
+    console.log(shape.getArea());
+});

@@ -1,19 +1,35 @@
-let count = 0;
-count += 1;
-count = "갑자기 분위기 문자열";
+interface Shape {
+    getArea(): number;
+}
 
-const message: string = "hello world";
+class Circle implements Shape {
+    constructor(public radius: number) {
+        this.radius = radius;
+    }
 
-const done: boolean = true;
+    getArea() {
+        return this.radius * this.radius * Math.PI;
+    }
+}
 
-const numbers: number[] = [1, 2, 3];
-const messages: string[] = ["hello", "world"];
+class Rectangle implements Shape {
+    constructor(private width: number, private height: number) {
+        this.width = width;
+        this.height = height;
+    }
+    getArea() {
+        return this.width * this.height;
+    }
+}
 
-messages.push(1);
+const circle = new Circle(5);
+const rectangle = new Rectangle(10, 5);
 
-let mightBeUndefined: string | undefined = undefined;
-let nullableNumber: number | null = null;
+console.log(circle.radius);
+// console.log(rectangle.width);
 
-let color: "red" | "orange" | "yellow" = "red";
-color = "yellow";
-color = "green";
+const shapes: Shape[] = [new Circle(5), new Rectangle(10, 5)];
+
+shapes.forEach((shape) => {
+    console.log(shape.getArea());
+});
