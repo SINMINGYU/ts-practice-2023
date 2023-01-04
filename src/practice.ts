@@ -1,14 +1,13 @@
-interface Person {
+type Person = {
     name: string;
     age?: number;
-}
-interface Developer extends Person {
+};
+type Developer = Person & {
     skills: string[];
-}
+};
 
 const person: Person = {
     name: "김사람",
-    age: 20,
 };
 
 const expert: Developer = {
@@ -16,4 +15,9 @@ const expert: Developer = {
     skills: ["javascript", "react"],
 };
 
-const people: Person[] = [person, expert];
+type People = Person[];
+const people: People = [person, expert];
+
+type Color = "red" | "orange" | "yellow";
+const color: Color = "red";
+const colors: Color[] = ["red", "orange"];
