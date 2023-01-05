@@ -1,6 +1,8 @@
 import React from "react";
-// import MyForm from "./MyForm";
 import ReducerSample from "./ReducerSample";
+import { SampleProvider } from "./SampleContext";
+// import MyForm from "./MyForm";
+// import ReducerSample from "./ReducerSample";
 // import Counter from "./Counter";
 // import Greetings from "./Greetings";
 
@@ -13,7 +15,10 @@ function App() {
     // };
     return (
         <div className="App">
-            <ReducerSample />
+            <SampleProvider>
+                <ReducerSample />
+            </SampleProvider>
+            {/* <ReducerSample /> */}
             {/* <MyForm onSubmit={onSubmit} /> */}
             {/* <Counter /> */}
             {/* <Greetings name={"mingyu"} onClick={onClick} /> */}
